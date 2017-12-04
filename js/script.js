@@ -1,13 +1,9 @@
 $( document ).ready(function() {
-   $( document ).ready(){
   var input = 0;
   var group_input = [];
-
   function ac(){
-
   };
   function c(){
-
   };
   function calculate(group){
     var result = 0;
@@ -76,6 +72,4 @@ $( document ).ready(function() {
     }
   });
   return calculate(group_input);
-}
-
 });
