@@ -2,9 +2,9 @@ body {
   background-color: #3498db; }
   body .container {
     width: 26rem;
-    margin: 4rem auto 0 auto; }
+    margin: 4rem auto 0 auto;
+    background-color: #FFFFFF; }
     body .container .row {
-      background-color: #FFFFFF;
       padding: 0 3rem 0 3rem; }
       body .container .row h1 {
         font-size: 0.8rem; }
@@ -28,12 +28,18 @@ body {
         font-size: 1.75rem;
         font-weight: 300;
         text-align: center;
-        min-width: 5rem;
-        min-height: 5rem;
+        width: 5rem;
+        height: 5rem;
         line-height: 5rem;
-        letter-spacing: 1px; }
+        letter-spacing: 1px;
+        cursor: pointer; }
+      body .container .row .button.active {
+        background-color: rgba(238, 238, 238, 0.5);
+        transition: all 500ms; }
       body .container .row .button:hover {
-        background-color: #EEEEEE; }
+        background-color: #EEEEEE;
+        color: #000000;
+        transition: all 150ms; }
       body .container .row .button.divide {
         color: #8e44ad; }
       body .container .row .button.times {
@@ -42,6 +48,12 @@ body {
         color: #e74c3c; }
       body .container .row .button.plus {
         color: #2ecc71; }
+      body .container .row .button.git svg {
+        margin-top: 1.5rem; }
+      body .container .row .button.point {
+        padding-top: -2rem; }
+      body .container .row .button.remove svg {
+        margin-top: 1.5rem; }
       body .container .row .made {
         font-weight: 300;
         display: block;
@@ -49,11 +61,12 @@ body {
         opacity: 0.8;
         padding-bottom: 2em; }
       body .container .row .heart, body .container .row .coffee {
-        vertical-align: text-top; }
+        vertical-align: top; }
       body .container .row a {
         text-decoration: none;
         color: #000000; }
       body .container .row a:hover {
-        color: #9E9E9E; }
+        color: #9E9E9E;
+        transition: all 300ms; }
     body .container .row:nth-child(3) .button {
       color: #9E9E9E; }
