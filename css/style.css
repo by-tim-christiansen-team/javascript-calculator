@@ -33,10 +33,10 @@ body {
           width: 100%;
           text-align: right;
           letter-spacing: 3px;
-          margin: 0 0 1rem 0;
-          overflow: hidden; }
+          margin: 0 0 1rem 0; }
           body .outer .wrapper .row .col-sm.display .input {
-            font-weight: 400; }
+            font-weight: 400;
+            overflow: scroll; }
           body .outer .wrapper .row .col-sm.display .group_input {
             font-weight: 300;
             font-size: 0.5em;
