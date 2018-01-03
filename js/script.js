@@ -80,9 +80,8 @@ $(document).ready(function(){
   });
   
   function operatorPressed(prop){
-    if (inputStr[inputStr.length] === "*" || inputStr[inputStr.length] == "/" || inputStr[inputStr.length] == "+" || inputStr[inputStr.length] == "-") {
-      inputStr = inputStr.substring(0, (inputStr.length - 1));
-      inputStr += prop;
+    if (inputStr.slice(-1) === "*" || inputStr.slice(-1) === "/" || inputStr.slice(-1) === "+" || inputStr.slice(-1) === "-") {
+      inputStr = inputStr.replace(/.$/, prop);
     	$(".group_input").text(inputStr);
     }
     else {
