@@ -19,16 +19,23 @@ $green: #2ecc71
 
 body
   background-color: $background
-  .container
-    width: 26rem
+  .outer
+    width: 100%
+    max-width: 26rem
     height: 100vh
     position: relative
+    margin: auto
     .wrapper
+      width: 26rem
       position: absolute
       top: 50%
       transform: translateY(-50%)
       background-color: $white
       padding: 0 3rem 0 3rem
+      display: block
+      @media screen and (max-width: 414px)
+        top: 0
+        transform: translateY(0%)
       .row
         h1
           font-size: 0.8rem
