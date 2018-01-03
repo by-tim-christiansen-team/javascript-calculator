@@ -48,6 +48,7 @@ body
           text-align: right
           letter-spacing: 3px
           margin: 0 0 1rem 0
+          overflow: hidden
           .input
             font-weight: 400
           .group_input
@@ -67,6 +68,9 @@ body
         .button.active
           background-color: $h-white-h
           transition: all 500ms
+        .button.error:hover
+          background-color: rgba(#e74c3c, 0.5)
+          transition: all 150ms
         .button:hover
           background-color: $h-white
           color: $black
