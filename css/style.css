@@ -2,28 +2,32 @@ body {
   background-color: #3498db; }
   body .container {
     width: 26rem;
-    margin: 4rem auto 0 auto;
-    background-color: #FFFFFF; }
-    body .container .row {
+    height: 100vh;
+    position: relative; }
+    body .container .wrapper {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #FFFFFF;
       padding: 0 3rem 0 3rem; }
-      body .container .row h1 {
+      body .container .wrapper .row h1 {
         font-size: 0.8rem; }
-      body .container .row .col-sm:first-child {
+      body .container .wrapper .row .col-sm:first-child {
         text-align: center;
         padding-top: 2rem; }
-      body .container .row .col-sm.display {
+      body .container .wrapper .row .col-sm.display {
         font-size: 2rem;
         width: 100%;
         text-align: right;
         letter-spacing: 3px;
         margin: 0 0 1rem 0; }
-        body .container .row .col-sm.display .input {
+        body .container .wrapper .row .col-sm.display .input {
           font-weight: 400; }
-        body .container .row .col-sm.display .group_input {
+        body .container .wrapper .row .col-sm.display .group_input {
           font-weight: 300;
           font-size: 0.5em;
           letter-spacing: 1px; }
-      body .container .row .button {
+      body .container .wrapper .row .button {
         color: #000000;
         font-size: 1.75rem;
         font-weight: 300;
@@ -33,40 +37,40 @@ body {
         line-height: 5rem;
         letter-spacing: 1px;
         cursor: pointer; }
-      body .container .row .button.active {
+      body .container .wrapper .row .button.active {
         background-color: rgba(238, 238, 238, 0.5);
         transition: all 500ms; }
-      body .container .row .button:hover {
+      body .container .wrapper .row .button:hover {
         background-color: #EEEEEE;
         color: #000000;
         transition: all 150ms; }
-      body .container .row .button.divide {
+      body .container .wrapper .row .button.divide {
         color: #8e44ad; }
-      body .container .row .button.times {
+      body .container .wrapper .row .button.times {
         color: #f39c12; }
-      body .container .row .button.minus {
+      body .container .wrapper .row .button.minus {
         color: #e74c3c; }
-      body .container .row .button.plus {
+      body .container .wrapper .row .button.plus {
         color: #2ecc71; }
-      body .container .row .button.git svg {
+      body .container .wrapper .row .button.git svg {
         margin-top: 1.5rem; }
-      body .container .row .button.point {
+      body .container .wrapper .row .button.point {
         padding-top: -2rem; }
-      body .container .row .button.remove svg {
+      body .container .wrapper .row .button.remove svg {
         margin-top: 1.5rem; }
-      body .container .row .made {
+      body .container .wrapper .row .made {
         font-weight: 300;
         display: block;
         color: #000000;
         opacity: 0.8;
         padding-bottom: 2em; }
-      body .container .row .heart, body .container .row .coffee {
+      body .container .wrapper .row .heart, body .container .wrapper .row .coffee {
         vertical-align: top; }
-      body .container .row a {
+      body .container .wrapper .row a {
         text-decoration: none;
         color: #000000; }
-      body .container .row a:hover {
+      body .container .wrapper .row a:hover {
         color: #9E9E9E;
         transition: all 300ms; }
-    body .container .row:nth-child(3) .button {
-      color: #9E9E9E; }
+      body .container .wrapper .row:nth-child(3) .button {
+        color: #9E9E9E; }

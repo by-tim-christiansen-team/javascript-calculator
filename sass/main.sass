@@ -21,72 +21,77 @@ body
   background-color: $background
   .container
     width: 26rem
-    margin: 4rem auto 0 auto
-    background-color: $white
-    .row
+    height: 100vh
+    position: relative
+    .wrapper
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      background-color: $white
       padding: 0 3rem 0 3rem
-      h1
-        font-size: 0.8rem
-      .col-sm:first-child
-        text-align: center
-        padding-top: 2rem
-      .col-sm.display
-        font-size: 2rem
-        width: 100%
-        text-align: right
-        letter-spacing: 3px
-        margin: 0 0 1rem 0
-        .input
-          font-weight: 400
-        .group_input
+      .row
+        h1
+          font-size: 0.8rem
+        .col-sm:first-child
+          text-align: center
+          padding-top: 2rem
+        .col-sm.display
+          font-size: 2rem
+          width: 100%
+          text-align: right
+          letter-spacing: 3px
+          margin: 0 0 1rem 0
+          .input
+            font-weight: 400
+          .group_input
+            font-weight: 300
+            font-size: 0.5em
+            letter-spacing: 1px
+        .button
+          color: $black
+          font-size: 1.75rem
           font-weight: 300
-          font-size: 0.5em
+          text-align: center
+          width: 5rem
+          height: 5rem
+          line-height: 5rem
           letter-spacing: 1px
-      .button
-        color: $black
-        font-size: 1.75rem
-        font-weight: 300
-        text-align: center
-        width: 5rem
-        height: 5rem
-        line-height: 5rem
-        letter-spacing: 1px
-        cursor: pointer
-      .button.active
-        background-color: $h-white-h
-        transition: all 500ms
-      .button:hover
-        background-color: $h-white
-        color: $black
-        transition: all 150ms
-      .button.divide
-        color: $purple
-      .button.times
-        color: $orange
-      .button.minus
-        color: $red
-      .button.plus
-        color: $green
-      .button.git svg
-        margin-top: 1.5rem
-      .button.point
-        padding-top: -2rem
-      .button.remove svg
-        margin-top: 1.5rem
-      .made
-        font-weight: 300
-        display: block
-        color: $black
-        opacity: 0.8
-        padding-bottom: 2em
-      .heart, .coffee
-        vertical-align: top
-      a
-        text-decoration: none
-        color: $black
-      a:hover
-        color: $grey
-        transition: all 300ms
-    .row:nth-child(3)
-      .button
-        color: $grey
+          cursor: pointer
+        .button.active
+          background-color: $h-white-h
+          transition: all 500ms
+        .button:hover
+          background-color: $h-white
+          color: $black
+          transition: all 150ms
+        .button.divide
+          color: $purple
+        .button.times
+          color: $orange
+        .button.minus
+          color: $red
+        .button.plus
+          color: $green
+        .button.git svg
+          margin-top: 1.5rem
+        .button.point
+          padding-top: -2rem
+        .button.remove svg
+          margin-top: 1.5rem
+        .made
+          font-weight: 300
+          display: block
+          color: $black
+          opacity: 0.8
+          padding-bottom: 2em
+        .heart, .coffee
+          vertical-align: top
+        a
+          text-decoration: none
+          color: $black
+        a:hover
+          color: $grey
+          transition: all 300ms
+      .row:nth-child(3)
+        .button
+          color: $grey
