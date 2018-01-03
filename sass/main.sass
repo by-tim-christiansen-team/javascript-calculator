@@ -1,51 +1,104 @@
 
-$prime: #222831
-$secondary: #00ADB5
-$white: #EEEEEE
-$black: #393E46
+$black: #000000
+$white: #FFFFFF
+
+$background: #3498db
+$h-white: #EEEEEE
+$h-white-h: rgba(#eeeeee, 0.5)
+
+$grey: #9E9E9E
+
+
+$purple: #8e44ad
+$orange: #f39c12
+$red: #e74c3c
+$green: #2ecc71
+
+
+
 
 body
-  background-color: $white
-  .container
-    padding: 1em
-    border: 4px solid $black
-    border-radius: 20px
-    background-color: #00ADB5
-    max-width: 24em
-    margin-top: 33vh
-    color: $white
-    .row
-      max-width: 24em
-      .col-sm:first-child
-        margin: 1em 0 1em 0
-        text-align: center
-      .col-sm.display
-        font-size: 2rem
-        margin: 1em 0 0 0
-        width: 100%
-        height: 3em
-        text-align: right
-        letter-spacing: 3px
-        .input
-          font-weight: 600
-        .group_input
+  background-color: $background
+  .outer
+    width: 100%
+    max-width: 26rem
+    height: 100vh
+    position: relative
+    margin: auto
+    .wrapper
+      width: 26rem
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      background-color: $white
+      padding: 0 3rem 0 3rem
+      display: block
+      @media screen and (max-width: 414px)
+        top: 0
+        transform: translateY(0%)
+      .row
+        h1
+          font-size: 0.8rem
+        .col-sm:first-child
+          text-align: center
+          padding-top: 2rem
+        .col-sm.display
+          font-size: 2rem
+          width: 100%
+          text-align: right
+          letter-spacing: 3px
+          margin: 0 0 1rem 0
+          .input
+            font-weight: 400
+          .group_input
+            font-weight: 300
+            font-size: 0.5em
+            letter-spacing: 1px
+        .button
+          color: $black
+          font-size: 1.75rem
           font-weight: 300
-          font-size: 0.5em
+          text-align: center
+          width: 5rem
+          height: 5rem
+          line-height: 5rem
           letter-spacing: 1px
-
-      button
-        color: $white
-        font-size: 1.5rem
-        font-weight: 300
-        border-radius: 100px
-        text-align: center
-        width: 4.5rem
-        height: 4.5rem
-        margin: 0.65rem
-        background-color: $black
-        letter-spacing: 1px
-        border-color: $white
-        border-width: 2px
-    .row.last
-      button:first-of-type
-        margin-left: 4.3em
+          cursor: pointer
+        .button.active
+          background-color: $h-white-h
+          transition: all 500ms
+        .button:hover
+          background-color: $h-white
+          color: $black
+          transition: all 150ms
+        .button.divide
+          color: $purple
+        .button.times
+          color: $orange
+        .button.minus
+          color: $red
+        .button.plus
+          color: $green
+        .button.git svg
+          margin-top: 1.5rem
+        .button.point
+          padding-top: -2rem
+        .button.remove svg
+          margin-top: 1.5rem
+        .made
+          font-weight: 300
+          display: block
+          color: $black
+          opacity: 0.8
+          padding-bottom: 2em
+        .heart, .coffee
+          vertical-align: top
+        a
+          text-decoration: none
+          color: $black
+        a:hover
+          color: $grey
+          transition: all 300ms
+      .row:nth-child(3)
+        .button
+          color: $grey
