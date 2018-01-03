@@ -14,11 +14,10 @@ $orange: #f39c12
 $red: #e74c3c
 $green: #2ecc71
 
-
-
-
 body
   background-color: $background
+  @media screen and (max-width: 414px)
+    background-color: $white
   .outer
     width: 100%
     max-width: 26rem
@@ -26,17 +25,18 @@ body
     position: relative
     margin: auto
     .wrapper
-      width: 26rem
       position: absolute
       top: 50%
       transform: translateY(-50%)
       background-color: $white
       padding: 0 3rem 0 3rem
       display: block
+      width: 26rem
       @media screen and (max-width: 414px)
         top: 0
         transform: translateY(0%)
       .row
+        margin: 0
         h1
           font-size: 0.8rem
         .col-sm:first-child
