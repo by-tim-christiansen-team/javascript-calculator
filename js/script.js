@@ -7,43 +7,43 @@ $(document).ready(function(){
     switch($(this).html()){
       case "1":
           currentInput += "1";
-          $(".input").text(currentInput);
+          update(".input");
           break;
       case "2":
           currentInput += "2";
-          $(".input").text(currentInput);
+          update(".input");
           break;
       case "3":
           currentInput += "3";
-          $(".input").text(currentInput);
+          update(".input");
           break;
       case "4":
           currentInput += "4";
-          $(".input").text(currentInput);
+          update(".input");
           break;
       case "5":
           currentInput += "5";
-          $(".input").text(currentInput);
+          update(".input");
           break;
       case "6":
           currentInput += "6";
-          $(".input").text(currentInput);
+          update(".input");
           break;
       case "7":
           currentInput += "7";
-          $(".input").text(currentInput);
+          update(".input");
           break;
       case "8":
           currentInput += "8";
-          $(".input").text(currentInput);
+          update(".input");
           break;
       case "9":
           currentInput += "9"
-          $(".input").text(currentInput);
+          update(".input");
           break;
       case "0":
           currentInput += "0";
-          $(".input").text(currentInput);
+          update(".input");
           break;
       case ".":
         if (currentInput.length == 0) {
@@ -52,7 +52,7 @@ $(document).ready(function(){
         else {
           currentInput += ".";
         }
-        $(".input").text(currentInput);
+        update(".input");
         break;
       case "x":
         operatorPressed("*");
@@ -67,10 +67,12 @@ $(document).ready(function(){
         operatorPressed("+");
         break;
       case "C":
-        inputStr =- currentInput;
         currentInput = "";
         $(".input").text("0");
-        $(".group_input").text(inputStr);
+        update();
+        if (inputStr.length == 0) {
+          $(".group_input").text("0");
+        }
         break;
       case "AC":
           inputStr = "";
@@ -80,8 +82,13 @@ $(document).ready(function(){
       case "=":
           inputStr += currentInput;
           lastResult = eval(inputStr);
-          $(".group_input").text(inputStr);
-          $(".input").text(lastResult);
+          if (inputStr === "") {
+            $(".group_input").add($(".input")).text("0");
+          }
+          else {
+            $(".group_input").text(inputStr);
+            $(".input").text(lastResult);
+          }
           inputStr = "";
           currentInput = "";
           break;
@@ -90,10 +97,16 @@ $(document).ready(function(){
       }
  });
   $(".remove").click(function() {
-    inputStr = inputStr.substring(0, inputStr.length - 1);
-    $(".group_input").text(inputStr);
-    currentInput = currentInput.substring(0, currentInput.length - 1);
-    $(".input").text(currentInput);
+    if ($(".input").html() !== "0") {
+      currentInput = currentInput.substring(0, currentInput.length - 1);
+      update(".input");
+    }
+    else {
+      inputStr = inputStr.substring(0, inputStr.length - 1);
+      update(".group_input");
+    }
+    
+    
     if ($(".group_input").html() == "") {
       $(".group_input").text("0");
     }
@@ -102,20 +115,36 @@ $(document).ready(function(){
     }
   });
   
+ 
+  function update(field) {
+    if (field === ".input") {
+      $(".input").text(currentInput);
+    }
+    else {
+      $(".group_input").text(inputStr);
+    }
+  }
+  
+  
+  
   function operatorPressed(prop){
     inputStr += currentInput;
     if (inputStr.slice(-1) === "*" || inputStr.slice(-1) === "/" || inputStr.slice(-1) === "+" || inputStr.slice(-1) === "-") {
       inputStr = inputStr.replace(/.$/, prop);
     }
+    else if (inputStr === "") {
+      inputStr += "0";
+      update(".group_input");
+    }
     else {
       inputStr += prop;
     }
     currentInput = "";
-    $(".group_input").text(inputStr);
+    update(".group_input");
     if ($(".input").html() == lastResult) {
       $(".input").text("0");
       inputStr = lastResult + prop;
-      $(".group_input").text(inputStr);
+      update(".group_input");
     }
     $(".input").text("0");
   }
